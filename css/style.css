@@ -1,0 +1,541 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+/*Se declaran variables de color a utilizar en todo css*/
+:root{
+    box-sizing: border-box;
+    --primary_color: #000;
+    font-family: "Nova Slim", system-ui;
+    --second_color: #ff59fe;
+    --alternative_color: #fff;
+    --smooth_font_color: #bcb69e;
+    --footer_color: #0c0c0c;
+}
+/* Cambia los colores generales de todas la página*/
+body{
+    background-color: var(--primary_color);
+    color: var(--second_color);
+}
+
+/* diseño de botones */
+.bt-classic {
+    border: 0;
+    width: 12.5em;
+    height: 3em;
+    border-radius: 1em;
+    background-color: var(--second_color);
+    color: var(--primary_color);
+    margin: 0.5em;
+    cursor: pointer;
+}
+
+/* Ajusta la seccion de brand */
+.brand{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5em;
+}
+
+.brand img{
+    width: 4.5em;
+}
+
+/* Ajusta la seccion del header */
+.header-container{
+    background-color: var(--primary_color);
+    text-align: center;
+    z-index: 100;
+    color: var(--second_color);
+    height: auto;
+}
+/* Muestra la seccion de navegacion por medio de una funcion*/
+#header-cont.shrink{
+    position: fixed;
+    width: 100%;
+    font-size: 1em;
+    padding: 1em;
+}
+
+.header-container h1{
+    font-size: 4em;
+}
+/* seccion de navegacion */
+.nav-main{
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-main .icon{
+    color: var(--second_color);
+}
+
+.nav-main .bt-classic{
+    background-color: var(--primary_color);
+    height: auto;
+}
+.nav-items{
+    background-color: var(--primary_color);
+    color: var(--second_color);
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    gap: 2em;
+    justify-content: center;
+}
+.nav-items li{
+    padding: 0.5em;
+    font-size: 1.2em;
+}
+
+#nav-items .hide{
+    display: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-main .nav-items li:hover{
+    background-color: var(--second_color);
+    color: black;
+    cursor: pointer;
+    height: 100%;
+}
+/* Ajustes en seccion de inicio */
+.home{
+    /*background-color: var(--second_color);*/
+    background-size: cover;
+    color: var(--primary_color);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 58em;
+    width: 100%;
+    gap: 0.5em;
+    color: var(--second_color);
+}
+
+.home h1{
+    font-size: 3.5em;
+    text-align: center;
+}
+.home p{
+    font-size: 1.1em;
+}
+
+.home img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+ /* Ajustes en seccion informativa */
+.info-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    height: 50em;
+}
+
+.info-container img{
+    width: 22em;
+}
+.info-container iframe{
+    width: 36em;
+    height: 26em;
+    border-radius: 0.5em;
+}
+.info h1{
+    text-align: center;
+    font-size: 3em;
+}
+.info p{
+    text-align: center;
+    font-size: 1.3em;
+    margin: 0.5em;
+}
+/* Ajustes en seccion de beneficios */
+.benefits h1{
+    font-size: 2.8em;
+    text-align: center;
+}
+.benefits-container{
+    color: var(--primary_color);
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    justify-content: center;
+    align-items: center;
+
+}
+.benefit{
+    background-color: var(--second_color);
+    border-radius: 1em;
+    margin: 2em;
+    box-sizing: border-box;
+    width: 20em;
+    height: 21em;
+    text-align: center;
+}
+
+.benefit .icon{
+    font-size: 5em;
+}
+
+.benefit p{
+    margin: 1em;
+    font-size: 1.3em;
+}
+
+.benefit h2{
+    font-size: 2.5em;
+    margin: 0 0 0.5em 0;
+}
+/* Ajustes en seccion features*/
+.features h1{
+    font-size: 2.8em;
+    text-align: center;
+}
+
+.features-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.ft{
+    position: relative;
+    width: 20em;
+    height: 40em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+    color: var(--smooth_font_color);
+    text-align: center;
+}
+
+.ft img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.ft:hover{
+    color: var(--second_color);
+    opacity: 1;
+}
+
+.ft:hover p{
+    opacity: 1;
+    color: var(--alternative_color);
+    background-color:#5c585898;
+    border-radius: 1em;
+}
+
+.ft p{
+    margin: 0.5em;
+    opacity: 0;
+}
+
+/* Ajustes en seccion de reviews */
+.reviews h1{
+    font-size: 2.8em;
+    text-align: center;
+}
+
+/*slider box function inspirado en un video de youtube https://www.youtube.com/watch?v=bkgnp2lp7FQ */
+.slider-box{
+    width: 80%;
+    height: auto;
+    margin: 50px auto 0;
+    overflow: hidden;
+    background-color: var(--second_color);
+    color: var(--primary_color);
+    border-radius: 1em;
+}
+
+.slider-box ul{
+    display: flex;
+    padding: 0;
+    width: 500%;
+    animation: slide 30s infinite;
+}
+
+.slider-box li{
+    width: 16.6%;
+    list-style: none;
+    flex: 1;
+}
+
+.review{
+    text-align: center;
+    padding: 1em;
+}
+
+.slider-box img{
+    width: 16em;
+    clip-path: circle(50% at 50% 50%);
+}
+
+@keyframes slide {
+    0%, 10% { transform: translateX(0); }
+    20%, 34% { transform: translateX(-20%); }
+    40%, 50%{transform: translateX(-40%);}
+    60%, 70%{transform: translateX(-60%);}
+    80%, 90%{transform: translateX(-80%);}
+    100% {transform: translateX(0);}
+}
+
+#message{
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 1em;
+    background-color: var(--second_color);
+    color: var(--primary_color);
+}
+
+.footer-container{
+    text-align: center;
+    cursor: default;
+    padding: 2em;
+    color: var(--smooth_font_color);
+    height: auto;
+    background-color:var(--footer_color);
+}
+.icon{
+    color: var(--alternative_font_color);
+    font-family: 'Material Icons';
+    font-size: 4em;
+    content: '\e560';
+}
+.contact{
+    margin: 1em;
+}
+
+.contact p{
+    margin: 0.5em;
+}
+
+.contact-row{
+    border-radius: 1em;
+    background-color: #444343;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 25em;
+    margin: auto;
+    max-height: none;
+}
+
+.contact-icon{
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 10px;
+}
+
+.fa-brands:hover{
+    color: var(--alternative_color);
+    cursor: pointer;
+}
+.news{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 1em;
+}
+
+.news h1{
+    font-size: 2em;
+}
+
+.news input{
+    height: 2em;
+    width: 20em;
+    border-radius: 1em;
+}
+
+.footer-container li{
+    list-style: none;
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+    .info h1{
+        position: absolute;
+        top: 0;
+        margin: 1em 0 0 0;
+    }
+    .info-container{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap:1em;
+        padding: 1em;
+        justify-content: center;
+        align-items: center;
+        height: 50em;
+    }
+    .info-container img{
+        width: 32em;
+        height: 35em;
+        object-fit: cover;
+        border-radius: 1em;
+    }
+    .info-container p{
+        flex: 1;
+        color: var(--second_color);
+        line-height: 1.5em;
+    }
+
+    .benefits-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        max-height: none;
+    }
+
+    .features-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        max-height: none;
+    }
+
+}
+
+@media (min-width: 1024px){
+    :root{
+        font-size: 1.3em;
+    }
+    .brand{
+        font-size: 1em;
+    }
+
+    .nav-items{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        gap: 2em;
+        justify-content: center;
+    }
+
+    .nav-main .bt-classic{
+        display: none;
+    }
+
+    .info-container h1{
+        position: absolute;
+        top: 0;
+        margin: 1em 0 0 0;
+    }
+    .info-container{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap:1em;
+        padding: 1em;
+        justify-content: center;
+        align-items: center;
+        height: 52em;
+    }
+    .info-container img{
+        width: 24em;
+        height: 33em;
+        object-fit: cover;
+        border-radius: 1em;
+    }
+    .info-container p{
+        flex: 1;
+        line-height: 3em;
+    }
+
+    .benefits-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        max-height: none;
+    }
+    .features-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        max-height: none;
+    }
+
+    .reviews h1{
+        font-size: 2.8em;
+        text-align: center;
+    }
+    
+    .review{
+        text-align: center;
+        padding: 1em;
+    }
+    
+    .slider-box img{
+        width: 25em;
+        clip-path: circle(50% at 50% 50%);
+    }
+
+
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        max-height: none;
+    }
+
+    .footer-content{
+        margin: 0 0 1em 1em;
+    }
+
+    .gallery{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 50%;
+        margin: auto;
+        max-height: none;
+    }
+    
+}
